@@ -1,8 +1,5 @@
 from tkinter import Tk, StringVar, Label, OptionMenu, Entry, Button
-from backend import get_current_rate, currency_list, get_currency
-
-# Call the get_current_rate function with default values, so the 2 OptionMenu can have values
-get_current_rate("SEK", "USD")
+from backend import currency_list, get_currency
 
 
 window = Tk()
@@ -40,8 +37,8 @@ amount_label.grid(row=3, column=0)
 amount_entry = Entry()
 amount_entry.grid(row=3, column=1, padx=10, pady=10)
 
-calculate_btn = Button(text="Convert", command=lambda: get_currency(value_currency_from, value_currency_to, amount_entry, current_amount))
-calculate_btn.grid(row=4, column=1, padx=10, pady=10)
+convert_button = Button(text="Convert", command=lambda: get_currency(value_currency_from, value_currency_to, amount_entry, current_amount))
+convert_button.grid(row=4, column=1, padx=10, pady=10)
 
 current_amount = Label(text=0.0)
 current_amount.grid(row=5, column=1)
